@@ -3,95 +3,347 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Think Partner Nexus｜DX・AI戦略</title>
-  <meta name="description" content="DX・AI戦略でお悩みの方向けの案内ページ" />
+  <title>Think Partner Nexus｜DX・AI戦略と実行判断の専門家</title>
+  <meta name="description" content="DX・AIの優先順位・投資判断・進め方を整理。PoC止まりを防ぐ“10項目”診断（PDF2枚）をLINE友だち追加で無料配布。" />
 
-  <!-- ✅ Meta Pixel は後でここ（head内）に貼る：Dを参照 -->
+  <!-- =========================
+       PIXEL_START（ここにMeta Pixelを貼る：head内）
+       例：<script> ... </script>
+       PIXEL_END
+  ========================== -->
 
   <style>
-    :root { --max: 920px; }
-    body { margin:0; font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; line-height:1.75; color:#111; background:#fff; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 16px 72px; }
-    header { padding: 8px 0 18px; border-bottom: 1px solid #eee; }
-    h1 { font-size: 28px; margin: 10px 0 6px; }
-    h2 { font-size: 20px; margin: 26px 0 10px; }
-    p  { margin: 10px 0; }
-    ul { margin: 10px 0 10px 1.2em; padding: 0; }
-    li { margin: 8px 0; }
-    .box { background:#fafafa; border:1px solid #eee; border-radius: 12px; padding: 14px 14px; margin: 14px 0; }
-    .cta { margin-top: 18px; padding: 16px; border: 1px solid #e6e6e6; border-radius: 12px; background: #fff; }
-    .btn { display:inline-block; padding: 14px 18px; border-radius: 12px; text-decoration:none; font-weight: 700; border: 1px solid #111; }
-    .btn:hover { opacity: 0.9; }
-    .note { font-size: 14px; color:#444; margin-top: 8px; }
-    footer { margin-top: 28px; padding-top: 18px; border-top:1px solid #eee; font-size: 13px; color:#444; }
-    .small { font-size: 14px; color:#333; }
+    :root{
+      --bg:#0b1020;
+      --card:#101a33;
+      --text:#e9eefc;
+      --muted:#b9c3df;
+      --line:#06C755;
+      --accent:#7aa7ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
+      background: radial-gradient(1200px 700px at 20% 0%, #1b2a5a 0%, var(--bg) 55%);
+      color:var(--text);
+      line-height:1.75;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 42px 18px 88px;
+    }
+    .hero{
+      padding: 28px 24px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .kicker{
+      display:inline-block;
+      font-weight:800;
+      color: var(--muted);
+      letter-spacing:.02em;
+      margin-bottom:10px;
+      font-size: 13px;
+    }
+    h1{
+      margin: 6px 0 12px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 14px;
+    }
+    .pill{
+      display:inline-block;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .grid{
+      display:grid;
+      gap: 18px;
+      margin-top: 18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 980px){
+      .grid{grid-template-columns: 1.35fr .65fr;}
+    }
+    .card{
+      padding: 22px;
+      border-radius: var(--radius);
+      background: rgba(16,26,51,.82);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+    }
+    h2{
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+    h3{
+      margin: 18px 0 10px;
+      font-size: 16px;
+      color: var(--text);
+    }
+    .muted{color:var(--muted)}
+    ul{margin: 10px 0 0 20px;}
+    li{margin: 8px 0;}
+    ol{margin: 10px 0 0 18px;}
+    .hr{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin: 16px 0;
+    }
+
+    /* LINE風CTAボタン */
+    .btn-line{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight: 900;
+      background: var(--line);
+      color:#fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(0,0,0,.22);
+      transition: transform .05s ease, filter .15s ease;
+      margin-top: 10px;
+    }
+    .btn-line:hover{filter: brightness(.96);}
+    .btn-line:active{transform: translateY(1px);}
+    .btn-line:focus-visible{
+      outline: 3px solid rgba(6,199,85,0.35);
+      outline-offset: 3px;
+    }
+    .cta-note{
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .tag{
+      display:inline-block;
+      margin-top: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(122,167,255,.30);
+      background: rgba(122,167,255,.10);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .small{
+      font-size: 12px;
+      color: var(--muted);
+    }
+    code.kbd{
+      background: rgba(255,255,255,.10);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.12);
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <div class="small">Think Partner Nexus</div>
-      <h1>DX・AI戦略でお悩みの方へ</h1>
-      <p>DX＝デジタルで会社を変える<br>AI＝考えるコンピュータ</p>
-    </header>
+  <main class="wrap">
 
-    <main>
-      <h2>こんな悩みありませんか？</h2>
-      <ul>
-        <li>DX・AIを進めたいけれど、そもそも何から始めればいいのか、進め方も含めて全体像がつかめていないのでは？…</li>
-        <li>うちもDX・AI導入でいろいろ変えていきたいが、どうやったらうまくいくのか、進め方も含めて全体像がつかめていないのでは？…</li>
-        <li>DX導入は始めているが、効果が出るのかよくわからない…社長、一人で悩まなくても大丈夫ですよ。DXとかAIは、ややこしくて、よくわからないですよね…</li>
-      </ul>
-
-      <h2>著者（支援者）について</h2>
-      <p>
-        私は、35年以上にわたりSAP/ERPを軸に、全社DX・SCM改革・グローバル変革を経営層直下で支援してきたコンサルタントで、MBAと情報学博士の知見を背景に、課題の診断から意思決定・実装までを一気通貫でつなぎます。
-        AIを単なる導入で終わらせず、ガバナンスと業務設計に落とし動く計画へ変換します。
-        変革中核層が自走できる型として知見を形式知化し、組織に移植します。
-        現場の制約を踏まえつつ、成果が出るところから確実に積み上げる伴走を提供します。
+    <section class="hero">
+      <span class="kicker">会社の成長のカギを握る「DX・AI」に関心をお持ちの経営者の方へ</span>
+      <h1>“次の一手”を、社長の判断軸で整理する</h1>
+      <p class="lead">
+        何から決めればよいかが見えないまま投資すると、PoC止まりや現場疲弊で終わる可能性があります。<br>
+        このページは、<strong>優先順位・投資判断・進め方</strong>を整理するための入口です。
       </p>
-
-      <div class="box">
-        <strong>Think Partner Nexus｜DX・AI戦略と実行判断の専門家</strong><br>
-        元BIG4外資コンサル/ ERP世界最大手/大手SIグループ等コンサル実務経験30年超／国立情報学研究所（NII）連携 PhD・MBA
+      <div class="pillrow">
+        <span class="pill">DX＝デジタルで会社を変える</span>
+        <span class="pill">AI＝考えるコンピュータ</span>
+        <span class="pill">コミット回避：可能性表現を維持</span>
       </div>
+    </section>
 
-      <h2>支援で「こうなる可能性」が高まります</h2>
-      <ol>
-        <li>
-          <strong>デジタルに投資したけれど、本当に成果が出ているのか分からないケース</strong><br>
-          実は“成果を測る物差し”がないから判断できないのです。投資の効果を見える化する
-        </li>
-        <li>
-          <strong>競合との競争のケース</strong><br>
-          AIを使えば、市場の動きやお客様の行動を先読みし、他社が真似できないサービスをつくることができる
-        </li>
-        <li>
-          <strong>経営判断に迷うケース</strong><br>
-          感覚や勘に頼るのではなく、リアルタイムのデータを使えば、判断のスピードも精度も一気に上がる
-        </li>
-      </ol>
+    <section class="grid">
 
-      <div class="cta">
-        <p><strong>👉 社長向け：PoC止まりを防ぐ“10項目”診断（PDF2枚）を友だち追加で無料で受け取る</strong><br>
-        ※売り込みなし／停止OK</p>
+      <article class="card">
+        <h2>こんな悩みはありませんか？</h2>
 
-        <!-- ✅ C) LINE友だち追加ボタン（URL方式） -->
-        <!-- 置換して使う：LINE_ID（@xxxx） → %40xxxx（@を%40に） -->
-        <a class="btn" href="https://line.me/R/ti/p/%40LINE_ID" target="_blank" rel="noopener">
+        <!-- =========================
+             EDIT_START（ここから文章だけ更新）
+        ========================== -->
+
+        <ul>
+          <li>AIの進化が速い中、コスト削減だけでなく<strong>次の事業の柱</strong>も考えないと、数年後に厳しくなるのでは…</li>
+          <li>DX・AIを進めたいが、<strong>どこから着手し、何を優先すべきか</strong>全体像がつかめていないのでは…</li>
+          <li>ツール導入やPoCは進むが、<strong>利益や生産性に効いているのか説明できない</strong>のでは…</li>
+          <li>すぐ取り組むべきだと分かっているが、<strong>社内だけでは推進が回りきらない</strong>のでは…</li>
+          <li>新しい技術だからこそ、<strong>自社の業務と経営にどう当てはめるか</strong>が分かりづらいですよね…</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h3>サポートを受けることで、次のような状態になる可能性が高まります</h3>
+        <ol>
+          <li><strong>着手順と優先順位が整理される</strong>：コスト削減・新規事業につながる打ち手を、事例も踏まえて検討できる可能性があります。</li>
+          <li><strong>投資対効果を説明できる</strong>：導入効果を客観データで見立てる“物差し”を持てる可能性があります。</li>
+          <li><strong>競争の打ち手に転換できる</strong>：AIを仕組みとして使い、トレンド把握・提案・営業・業務効率化へ展開できる可能性があります。</li>
+          <li><strong>判断の精度とスピードが上がる</strong>：リアルタイムデータの分析が進み、問題解決へ応用できる土壌が育つ可能性があります。</li>
+        </ol>
+
+        <div class="hr"></div>
+
+        <h2>お悩み（社長の“判断の詰まり”を言語化）</h2>
+
+        <h3>顧客体験</h3>
+        <ul>
+          <li>営業が「紙と足」中心のままで、獲得効率が頭打ちになっていませんか。</li>
+          <li>WebやSNSで“来てもらう”仕組みを作りたいが、何から整えるべきか迷っていませんか。</li>
+          <li>反応（問い合わせ・成約・継続）を、勘ではなく数字で追えていない状態になっていませんか。</li>
+        </ul>
+
+        <h3>競合</h3>
+        <ul>
+          <li>競争相手は同業だけではありません。海外・異業種が土俵を変える時代です。</li>
+          <li>気づけば価格・スピード・体験で置いていかれる不安がありませんか。</li>
+          <li>自社もデジタルで競争の土俵を広げたいが、打ち手が見えにくくありませんか。</li>
+        </ul>
+
+        <h3>データ活用</h3>
+        <ul>
+          <li>「情報は資産」と言うが、社内データが眠ったままになっていませんか。</li>
+          <li>部門ごとに囲い込まれ、意思決定に使える形に整っていませんか。</li>
+          <li>経営判断の材料を、もっと“見える化”できる余地がありませんか。</li>
+        </ul>
+
+        <h3>新技術対応</h3>
+        <ul>
+          <li>新技術が自社の事業・顧客にどう影響するか、整理しきれず混乱していませんか。</li>
+          <li>ツール導入が先行し、「導入する理由」が曖昧なまま進んでいませんか。</li>
+          <li>情報が多すぎて判断が鈍り、優先順位がつけにくくなっていませんか。</li>
+        </ul>
+
+        <h3>自社組織</h3>
+        <ul>
+          <li>IT投資が“コスト扱い”のままで、変革が進みにくくなっていませんか。</li>
+          <li>DXを始めたが、事業への効果を測る仕組みが弱くありませんか。</li>
+          <li>人事評価や体制が追いつかず、現場が疲弊して止まりそうになっていませんか。</li>
+          <li>顧客視点が薄れ、気づくと選ばれにくくなる不安がありませんか。</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h2>解決へのアプローチ</h2>
+        <p class="muted" style="margin:0;">
+          AIを単なる導入で終わらせず、<strong>ガバナンスと業務設計に落とし込み、動く計画へ変換</strong>します。<br>
+          変革の中核層が自走できる型として知見を形式知化し、組織に移植します。<br>
+          現場の制約を踏まえつつ、成果が出るところから確実に積み上げる伴走を提供します。
+        </p>
+
+        <h3>支援の切り口（例）</h3>
+        <ul>
+          <li><strong>顧客体験</strong>：データを活用し、診断・業務効率化・継続改善につなげる道筋を設計します。</li>
+          <li><strong>競合</strong>：業界・競合・顧客変化を“判断できる形”に可視化し、経営判断につなげます。</li>
+          <li><strong>データ活用</strong>：PoC選定からRAG構築まで、自社データを戦略的資産へ変える整備・設計を支援します。</li>
+          <li><strong>新技術対応</strong>：ツール選定で終わらせず、推進と効果検証をセットで設計します。</li>
+          <li><strong>自社組織</strong>：外部活用と人材育成を両立し、長期的に回せる体制づくりを伴走します。</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h2>提供価値（得られる状態）</h2>
+        <p class="small">※状況により異なります。ここも「可能性が高まります」のトーンで統一しています。</p>
+
+        <ol>
+          <li><strong>未来像と全体構想を描き、社内で共有できる</strong>可能性が高まります。</li>
+          <li><strong>自社にしかできないDX・AI戦略</strong>を整理できる可能性が高まります。</li>
+          <li><strong>PoC止まりを減らし、本番稼働へ移す確度</strong>が高まる可能性があります。</li>
+          <li><strong>経営判断のスピードと精度</strong>が上がる可能性が高まります。</li>
+          <li><strong>社長業の本質（意思決定・未来構想）</strong>に時間を戻せる可能性が高まります。</li>
+          <li><strong>投資判断の優先順位とROIの見立て</strong>が整理される可能性が高まります。</li>
+          <li><strong>金融機関・取引先への説明力</strong>が上がる可能性が高まります。</li>
+          <li><strong>収益構造の再設計</strong>（キャッシュポイント整理）につながる可能性が高まります。</li>
+          <li><strong>社内の意思決定と推進の摩擦</strong>が下がる可能性が高まります。</li>
+          <li><strong>判断基準を形式知化し、後継者・幹部へ継承</strong>できる可能性が高まります。</li>
+        </ol>
+
+        <div class="hr"></div>
+
+        <h3>Think Partner Nexus｜DX・AI戦略と実行判断の専門家</h3>
+        <p class="muted" style="margin:0;">
+          35年以上にわたりSAP/ERPを軸に、全社DX・SCM改革・グローバル変革を経営層直下で支援してきたコンサルタントです。<br>
+          課題の診断から意思決定・実装までを一気通貫でつなぎ、AIを「導入」で終わらせず、ガバナンスと業務設計に落として動く計画へ変換します。
+        </p>
+        <p class="muted" style="margin:10px 0 0;">
+          元BIG4外資コンサル／ERP世界最大手／大手SIグループ等 コンサル実務経験30年超／国立情報学研究所（NII）連携 PhD・MBA
+        </p>
+
+        <!-- =========================
+             EDIT_END（ここまで文章だけ更新）
+        ========================== -->
+
+      </article>
+
+      <aside class="card">
+        <h2>無料で受け取れるもの</h2>
+        <p style="margin:0;" class="muted">
+          👉 社長向け：PoC止まりを防ぐ“10項目”診断（PDF2枚）を、友だち追加で無料で受け取る
+        </p>
+        <p class="cta-note">※売り込みなし／停止OK</p>
+
+        <!-- CTA：LINEボタン（YOUR_LINE_IDだけ置換） -->
+        <a class="btn-line"
+           href="https://line.me/R/ti/p/%40YOUR_LINE_ID"
+           target="_blank"
+           rel="noopener">
           無料公式LINE 友だち追加
         </a>
+        <span class="tag">差し替え：<strong>YOUR_LINE_ID</strong> → あなたのID（@なし）</span>
 
-        <div class="note">
-          ※上のリンクの <code>LINE_ID</code> をあなたのIDに差し替え（例：<code>%40tpnexus</code>）。
-        </div>
-      </div>
-    </main>
+        <div class="hr"></div>
 
-    <footer>
-      <div>© Think Partner Nexus</div>
+        <h2>更新をサクサクにする</h2>
+        <p class="muted" style="margin:0;">
+          月1回の文章更新は、GitHubでリポジトリを開いて <code class="kbd">.</code>（ドット）を押し、<br>
+          <code class="kbd">EDIT_START〜EDIT_END</code> の中だけ編集→Commit が安全です。
+        </p>
+
+        <div class="hr"></div>
+
+        <h2>次のステップ</h2>
+        <p class="muted" style="margin:0;">
+          Meta Pixel最適化を継続する場合は、上部の <code class="kbd">PIXEL_START</code> にPixelを貼り、<br>
+          Events Manager の Test Events で受信（PageView等）を確認してください。
+        </p>
+      </aside>
+
+    </section>
+
+    <footer style="margin-top:18px; color:var(--muted); font-size:12px;">
+      © Think Partner Nexus
     </footer>
-  </div>
+  </main>
 </body>
 </html>
