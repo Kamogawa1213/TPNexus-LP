@@ -1,10 +1,17 @@
 <!doctype html>
 <html lang="ja">
-
+<head>
+  <!-- 【2026-02-18 JST】 【確実性：高】 【信頼度: 99%】
+       NOTE: スマホがPC表示になる原因の9割は viewport メタが欠けていることです。
+       このファイルは viewport を入れてあります（絶対に消さないでください）。 -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Think Partner Nexus</title>
+  <meta name="description" content="DX・AI戦略でお悩みの経営者へ。PoC止まりを防ぐ“10項目”診断（PDF2枚）を、公式LINE友だち追加で無料配布。" />
 
   <!-- =========================
        PIXEL_START（ここにMeta Pixelを貼る：head内）
-       例：<script>...</script>　
+       例：<script>...</script>
        ========================== -->
   <!-- PIXEL_END -->
 
@@ -36,52 +43,16 @@
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 18px 40px;
-    }
-
-    header{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px 22px 18px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      flex-wrap: wrap;
-    }
-
-    .logo{
-      width:42px; height:42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(69,140,255,.9), rgba(0,195,0,.6));
-      box-shadow: 0 10px 18px rgba(0,0,0,.35);
-      flex: 0 0 auto;
-    }
-
-    .brand h1{
-      margin:0;
-      font-size: 18px;
-      letter-spacing: .2px;
-    }
-
-    .sub{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 13px;
+      padding: 14px 18px 40px; /* headerを消したので上余白を詰めた */
     }
 
     .hero{
-      margin-top: 16px;
+      margin-top: 0;
       display:grid;
       gap: 16px;
       grid-template-columns: 1.35fr .65fr;
       align-items: start;
     }
-
     @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; }
     }
@@ -107,7 +78,6 @@
       position: sticky;
       top: 16px;
     }
-
     @media (max-width: 900px){
       .aside-cta{ position: static; }
     }
@@ -117,13 +87,11 @@
       font-size: 18px;
       letter-spacing: .2px;
     }
-
     h3{
       margin: 18px 0 8px;
       font-size: 16px;
       letter-spacing: .2px;
     }
-
     p{ margin: 10px 0; }
     .muted{ color: var(--muted); }
 
@@ -217,16 +185,6 @@
 
 <body>
   <div class="wrap">
-    <header>
-       
-      <div class="brand">
-        <div>
-          <h1>Think Partner Nexus｜DX・AI戦略と実行判断の専門家</h1>
-          <div class="sub">元BIG4外資コンサル／ERP世界最大手／大手SI等 30年超｜NII連携 PhD・MBA</div>
-        </div>
-      </div>
-    </header>
-
     <section class="hero">
       <article>
         <!-- =========================
@@ -282,7 +240,7 @@
 
         <!-- =========================
              MOBILE_CTA_1（スマホ：4項目の直後に表示）
-             「社長向け：」は入れない（重複感回避）　
+             「社長向け：」は入れない（重複感回避）
              ========================== -->
         <div class="card mobile-cta" style="margin-top:14px;">
           <h2>無料で受け取れるもの</h2>
