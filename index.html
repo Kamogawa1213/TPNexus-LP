@@ -2,308 +2,297 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Think Partner Nexus｜DX・AI戦略と実行判断の専門家</title>
-  <meta name="description" content="DX・AIの優先順位・投資判断・進め方を整理。PoC止まりを防ぐ“10項目”診断（PDF2枚）をLINE友だち追加で無料配布。" />
+  <meta name="description" content="DX・AI戦略でお悩みの経営者へ。PoC止まりを防ぐ“10項目”診断（PDF2枚）を、公式LINE友だち追加で無料配布。" />
 
   <!-- =========================
        PIXEL_START（ここにMeta Pixelを貼る：head内）
-       例：<script> ... </script>
-       PIXEL_END
-  ========================== -->
+       例：<script>...</script>
+       ========================== -->
+  <!-- PIXEL_END -->
 
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#101a33;
-      --text:#e9eefc;
-      --muted:#b9c3df;
-      --line:#06C755;
-      --accent:#7aa7ff;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --radius: 18px;
+      --bg:#0b1220;
+      --panel:#0f1a2e;
+      --card:#101f38;
+      --text:#eaf0ff;
+      --muted:#b7c4e0;
+      --line:#00c300;
+      --border: rgba(255,255,255,.10);
+      --shadow: 0 12px 28px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1100px;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
-      background: radial-gradient(1200px 700px at 20% 0%, #1b2a5a 0%, var(--bg) 55%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(69,140,255,.22), transparent 60%),
+                  radial-gradient(900px 600px at 85% 0%, rgba(0,195,0,.12), transparent 55%),
+                  var(--bg);
       color:var(--text);
-      line-height:1.75;
-    }
-    a{color:inherit}
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 42px 18px 88px;
-    }
-    .hero{
-      padding: 28px 24px;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .kicker{
-      display:inline-block;
-      font-weight:800;
-      color: var(--muted);
-      letter-spacing:.02em;
-      margin-bottom:10px;
-      font-size: 13px;
-    }
-    h1{
-      margin: 6px 0 12px;
-      font-size: 30px;
-      line-height: 1.25;
-    }
-    .lead{
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-    }
-    .pillrow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 14px;
-    }
-    .pill{
-      display:inline-block;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.2;
+      line-height: 1.7;
     }
 
-    .grid{
-      display:grid;
-      gap: 18px;
-      margin-top: 18px;
-      grid-template-columns: 1fr;
+    a{ color: inherit; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 40px;
     }
-    @media (min-width: 980px){
-      .grid{grid-template-columns: 1.35fr .65fr;}
-    }
-    .card{
-      padding: 22px;
+
+    header{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      background: rgba(16,26,51,.82);
-      border: 1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
+      padding: 22px 22px 18px;
     }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap: wrap;
+    }
+
+    .logo{
+      width:42px; height:42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(69,140,255,.9), rgba(0,195,0,.6));
+      box-shadow: 0 10px 18px rgba(0,0,0,.35);
+      flex: 0 0 auto;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+
+    .sub{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero{
+      margin-top: 16px;
+      display:grid;
+      gap: 16px;
+      grid-template-columns: 1.35fr .65fr;
+      align-items: start;
+    }
+
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    article{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      min-height: 200px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      position: sticky;
+      top: 16px;
+    }
+
+    @media (max-width: 900px){
+      .card{ position: static; }
+    }
+
     h2{
       margin: 0 0 10px;
-      font-size: 20px;
-      line-height: 1.35;
+      font-size: 18px;
+      letter-spacing: .2px;
     }
+
     h3{
-      margin: 18px 0 10px;
+      margin: 18px 0 8px;
       font-size: 16px;
-      color: var(--text);
+      letter-spacing: .2px;
     }
-    .muted{color:var(--muted)}
-    ul{margin: 10px 0 0 20px;}
-    li{margin: 8px 0;}
-    ol{margin: 10px 0 0 18px;}
+
+    p{ margin: 10px 0; }
+
+    .muted{ color: var(--muted); }
+
+    .kicker{
+      font-size: 22px;
+      line-height: 1.35;
+      margin: 0 0 10px;
+      font-weight: 800;
+    }
+
+    .defs{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pill{
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,.03);
+    }
+
+    ul{
+      margin: 8px 0 0;
+      padding-left: 1.2em;
+    }
+    li{ margin: 6px 0; }
+
     .hr{
       height:1px;
-      background: rgba(255,255,255,.10);
-      margin: 16px 0;
+      background: var(--border);
+      margin: 14px 0;
     }
 
-    /* LINE風CTAボタン */
     .btn-line{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      width:100%;
-      padding: 14px 18px;
-      border-radius: 12px;
-      text-decoration:none;
-      font-weight: 900;
+      display:block;
+      width: 100%;
+      text-align:center;
       background: var(--line);
-      color:#fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 22px rgba(0,0,0,.22);
-      transition: transform .05s ease, filter .15s ease;
-      margin-top: 10px;
+      color: #fff;
+      text-decoration:none;
+      padding: 14px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      box-shadow: 0 10px 18px rgba(0,195,0,.22);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .06s ease, filter .12s ease;
+      margin-top: 12px;
     }
-    .btn-line:hover{filter: brightness(.96);}
-    .btn-line:active{transform: translateY(1px);}
-    .btn-line:focus-visible{
-      outline: 3px solid rgba(6,199,85,0.35);
-      outline-offset: 3px;
-    }
+    .btn-line:hover{ filter: brightness(1.03); }
+    .btn-line:active{ transform: translateY(1px); }
+
     .cta-note{
-      margin: 8px 0 0;
-      font-size: 13px;
+      margin: 6px 0 0;
       color: var(--muted);
+      font-size: 12px;
     }
 
-    .tag{
+    .badge{
       display:inline-block;
       margin-top: 10px;
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(122,167,255,.30);
-      background: rgba(122,167,255,.10);
-      color: var(--muted);
       font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,.03);
     }
 
-    .small{
-      font-size: 12px;
-      color: var(--muted);
+    .section-title{
+      margin-top: 18px;
+      padding-top: 4px;
     }
-    code.kbd{
-      background: rgba(255,255,255,.10);
-      padding: 2px 6px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,.12);
+
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Think Partner Nexus｜DX・AI戦略と実行判断の専門家</h1>
+          <div class="sub">元BIG4外資コンサル／ERP世界最大手／大手SI等 30年超｜NII連携 PhD・MBA</div>
+        </div>
+      </div>
+    </header>
 
     <section class="hero">
-      <span class="kicker">会社の成長のカギを握る「DX・AI」に関心をお持ちの経営者の方へ</span>
-      <h1>“次の一手”を、社長の判断軸で整理する</h1>
-      <p class="lead">
-        何から決めればよいかが見えないまま投資すると、PoC止まりや現場疲弊で終わる可能性があります。<br>
-        このページは、<strong>優先順位・投資判断・進め方</strong>を整理するための入口です。
-      </p>
-      <div class="pillrow">
-        <span class="pill">DX＝デジタルで会社を変える</span>
-        <span class="pill">AI＝考えるコンピュータ</span>
-        <span class="pill">コミット回避：可能性表現を維持</span>
-      </div>
-    </section>
-
-    <section class="grid">
-
-      <article class="card">
-        <h2>こんな悩みはありませんか？</h2>
-
+      <article>
         <!-- =========================
              EDIT_START（ここから文章だけ更新）
-        ========================== -->
+             “見た目（CSS）”は触らず、本文だけ差し替える想定
+             ========================== -->
 
+        <p class="kicker">会社の成長のカギをにぎる、DX・AI戦略に興味をお持ちの経営者の方へ</p>
+
+        <div class="defs">
+          <span class="pill">DX＝デジタルで会社を変える</span>
+          <span class="pill">AI＝考えるコンピュータ</span>
+        </div>
+
+        <h3 class="section-title">こんな悩みありませんか？</h3>
         <ul>
-          <li>AIの進化が速い中、コスト削減だけでなく<strong>次の事業の柱</strong>も考えないと、数年後に厳しくなるのでは…</li>
-          <li>DX・AIを進めたいが、<strong>どこから着手し、何を優先すべきか</strong>全体像がつかめていないのでは…</li>
-          <li>ツール導入やPoCは進むが、<strong>利益や生産性に効いているのか説明できない</strong>のでは…</li>
-          <li>すぐ取り組むべきだと分かっているが、<strong>社内だけでは推進が回りきらない</strong>のでは…</li>
-          <li>新しい技術だからこそ、<strong>自社の業務と経営にどう当てはめるか</strong>が分かりづらいですよね…</li>
+          <li>AIが急激に進化している中、人員のコスト削減だけでなく、新しい事業の柱をみつけていかないと3年後は、我が社の経営は厳しくなるのでは？…</li>
+          <li>DX・AIを進めたいけれど、そもそも何から始めればいいのか、進め方も含めて全体像がつかめていないのでは？…</li>
+          <li>うちもDX・AI導入でいろいろ変えていきたいが、どうやったらうまくいくのか？…</li>
+          <li>進歩が激しいので、いますぐとりかからないといけないと思っているが、社内で取り組むだけでは限界がある</li>
+          <li>DX・AIは新しい技術なので、自分の会社がどういう風に活用していけばよいのか、わかりづらいですよね...</li>
         </ul>
 
         <div class="hr"></div>
 
-        <h3>サポートを受けることで、次のような状態になる可能性が高まります</h3>
-        <ol>
-          <li><strong>着手順と優先順位が整理される</strong>：コスト削減・新規事業につながる打ち手を、事例も踏まえて検討できる可能性があります。</li>
-          <li><strong>投資対効果を説明できる</strong>：導入効果を客観データで見立てる“物差し”を持てる可能性があります。</li>
-          <li><strong>競争の打ち手に転換できる</strong>：AIを仕組みとして使い、トレンド把握・提案・営業・業務効率化へ展開できる可能性があります。</li>
-          <li><strong>判断の精度とスピードが上がる</strong>：リアルタイムデータの分析が進み、問題解決へ応用できる土壌が育つ可能性があります。</li>
+        <h3>私の支援で、次のような状態になる可能性が高まります</h3>
+        <ol style="margin:8px 0 0; padding-left: 1.2em;">
+          <li>
+            <strong>どこから始めればよいか</strong><br />
+            多くの事例を踏まえつつ、会社へ助言をもらった上で、コスト削減や新規事業につながるデジタル導入ができた！
+          </li>
+          <li style="margin-top:10px;">
+            <strong>デジタルに投資したけれど、本当に成果が出ているのか分からないケース</strong><br />
+            導入効果を客観的でデータで分析可能になるノウハウを蓄積できたので、費用対効果が高くなった！
+          </li>
+          <li style="margin-top:10px;">
+            <strong>競合との競争のケース</strong><br />
+            いままでは、ライバル会社の進歩をみて悔しい思いをしてたけれど、AIをシステマティクに使う方法を社員がマスターし、今後のトレンドをいち早く察知した新規事業の立案、営業先の開拓、コスト削減等の提案を社員からしてくれるようになった！
+          </li>
+          <li style="margin-top:10px;">
+            <strong>経営判断に迷うケース</strong><br />
+            感覚や勘に頼るのではなく、リアルタイムのデータを客観的に分析できるノウハウが身につき、会社のさまざまな問題解決に応用できる土壌ができた！今後の我が社の財産となるだろう！
+          </li>
         </ol>
 
         <div class="hr"></div>
 
-        <h2>お悩み（社長の“判断の詰まり”を言語化）</h2>
-
-        <h3>顧客体験</h3>
-        <ul>
-          <li>営業が「紙と足」中心のままで、獲得効率が頭打ちになっていませんか。</li>
-          <li>WebやSNSで“来てもらう”仕組みを作りたいが、何から整えるべきか迷っていませんか。</li>
-          <li>反応（問い合わせ・成約・継続）を、勘ではなく数字で追えていない状態になっていませんか。</li>
-        </ul>
-
-        <h3>競合</h3>
-        <ul>
-          <li>競争相手は同業だけではありません。海外・異業種が土俵を変える時代です。</li>
-          <li>気づけば価格・スピード・体験で置いていかれる不安がありませんか。</li>
-          <li>自社もデジタルで競争の土俵を広げたいが、打ち手が見えにくくありませんか。</li>
-        </ul>
-
-        <h3>データ活用</h3>
-        <ul>
-          <li>「情報は資産」と言うが、社内データが眠ったままになっていませんか。</li>
-          <li>部門ごとに囲い込まれ、意思決定に使える形に整っていませんか。</li>
-          <li>経営判断の材料を、もっと“見える化”できる余地がありませんか。</li>
-        </ul>
-
-        <h3>新技術対応</h3>
-        <ul>
-          <li>新技術が自社の事業・顧客にどう影響するか、整理しきれず混乱していませんか。</li>
-          <li>ツール導入が先行し、「導入する理由」が曖昧なまま進んでいませんか。</li>
-          <li>情報が多すぎて判断が鈍り、優先順位がつけにくくなっていませんか。</li>
-        </ul>
-
-        <h3>自社組織</h3>
-        <ul>
-          <li>IT投資が“コスト扱い”のままで、変革が進みにくくなっていませんか。</li>
-          <li>DXを始めたが、事業への効果を測る仕組みが弱くありませんか。</li>
-          <li>人事評価や体制が追いつかず、現場が疲弊して止まりそうになっていませんか。</li>
-          <li>顧客視点が薄れ、気づくと選ばれにくくなる不安がありませんか。</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h2>解決へのアプローチ</h2>
-        <p class="muted" style="margin:0;">
-          AIを単なる導入で終わらせず、<strong>ガバナンスと業務設計に落とし込み、動く計画へ変換</strong>します。<br>
-          変革の中核層が自走できる型として知見を形式知化し、組織に移植します。<br>
-          現場の制約を踏まえつつ、成果が出るところから確実に積み上げる伴走を提供します。
+        <h3>解決へのアプローチ</h3>
+        <p>
+          AIを単なる導入で終わらせず、ガバナンスと業務設計に落とし動く計画へ変換します。変革中核層が自走できる型として知見を形式知化し、組織に移植します。現場の制約を踏まえつつ、成果が出るところから確実に積み上げる伴走を提供します。
         </p>
 
-        <h3>支援の切り口（例）</h3>
+        <h3>提供価値（例）</h3>
         <ul>
-          <li><strong>顧客体験</strong>：データを活用し、診断・業務効率化・継続改善につなげる道筋を設計します。</li>
-          <li><strong>競合</strong>：業界・競合・顧客変化を“判断できる形”に可視化し、経営判断につなげます。</li>
-          <li><strong>データ活用</strong>：PoC選定からRAG構築まで、自社データを戦略的資産へ変える整備・設計を支援します。</li>
-          <li><strong>新技術対応</strong>：ツール選定で終わらせず、推進と効果検証をセットで設計します。</li>
-          <li><strong>自社組織</strong>：外部活用と人材育成を両立し、長期的に回せる体制づくりを伴走します。</li>
+          <li>未来を描き、社員と共有できるようになる可能性が高まります</li>
+          <li>自社にしかできないDX・AI戦略を手に入れる可能性が高まります</li>
+          <li>PoC止まりを減らし、本番稼働へ移行する可能性が高まります</li>
+          <li>投資判断の優先順位が明確になり、意思決定が速くなる可能性が高まります</li>
         </ul>
 
-        <div class="hr"></div>
-
-        <h2>提供価値（得られる状態）</h2>
-        <p class="small">※状況により異なります。ここも「可能性が高まります」のトーンで統一しています。</p>
-
-        <ol>
-          <li><strong>未来像と全体構想を描き、社内で共有できる</strong>可能性が高まります。</li>
-          <li><strong>自社にしかできないDX・AI戦略</strong>を整理できる可能性が高まります。</li>
-          <li><strong>PoC止まりを減らし、本番稼働へ移す確度</strong>が高まる可能性があります。</li>
-          <li><strong>経営判断のスピードと精度</strong>が上がる可能性が高まります。</li>
-          <li><strong>社長業の本質（意思決定・未来構想）</strong>に時間を戻せる可能性が高まります。</li>
-          <li><strong>投資判断の優先順位とROIの見立て</strong>が整理される可能性が高まります。</li>
-          <li><strong>金融機関・取引先への説明力</strong>が上がる可能性が高まります。</li>
-          <li><strong>収益構造の再設計</strong>（キャッシュポイント整理）につながる可能性が高まります。</li>
-          <li><strong>社内の意思決定と推進の摩擦</strong>が下がる可能性が高まります。</li>
-          <li><strong>判断基準を形式知化し、後継者・幹部へ継承</strong>できる可能性が高まります。</li>
-        </ol>
-
-        <div class="hr"></div>
-
-        <h3>Think Partner Nexus｜DX・AI戦略と実行判断の専門家</h3>
-        <p class="muted" style="margin:0;">
-          35年以上にわたりSAP/ERPを軸に、全社DX・SCM改革・グローバル変革を経営層直下で支援してきたコンサルタントです。<br>
-          課題の診断から意思決定・実装までを一気通貫でつなぎ、AIを「導入」で終わらせず、ガバナンスと業務設計に落として動く計画へ変換します。
-        </p>
-        <p class="muted" style="margin:10px 0 0;">
-          元BIG4外資コンサル／ERP世界最大手／大手SIグループ等 コンサル実務経験30年超／国立情報学研究所（NII）連携 PhD・MBA
-        </p>
+        <span class="badge">※広告表現は「可能性が高まります」のトーンで統一しています</span>
 
         <!-- =========================
              EDIT_END（ここまで文章だけ更新）
-        ========================== -->
-
+             ========================== -->
       </article>
 
       <aside class="card">
@@ -313,38 +302,19 @@
         </p>
         <p class="cta-note">※売り込みなし／停止OK</p>
 
-        <!-- CTA：LINEボタン（YOUR_LINE_IDだけ置換） -->
+        <!-- CTA：LINEボタン（リンク先だけ管理） -->
         <a class="btn-line"
-   href="https://lin.ee/0Gw1hKQ"
-   target="_blank"
-   rel="noopener">
-  無料公式LINE 友だち追加
-</a>
-
-        <span class="tag">差し替え：<strong>YOUR_LINE_ID</strong> → あなたのID（@なし）</span>
-
-        <div class="hr"></div>
-
-        <h2>更新をサクサクにする</h2>
-        <p class="muted" style="margin:0;">
-          月1回の文章更新は、GitHubでリポジトリを開いて <code class="kbd">.</code>（ドット）を押し、<br>
-          <code class="kbd">EDIT_START〜EDIT_END</code> の中だけ編集→Commit が安全です。
-        </p>
-
-        <div class="hr"></div>
-
-        <h2>次のステップ</h2>
-        <p class="muted" style="margin:0;">
-          Meta Pixel最適化を継続する場合は、上部の <code class="kbd">PIXEL_START</code> にPixelを貼り、<br>
-          Events Manager の Test Events で受信（PageView等）を確認してください。
-        </p>
+           href="https://lin.ee/0Gw1hKQ"
+           target="_blank"
+           rel="noopener">
+          無料公式LINE 友だち追加
+        </a>
       </aside>
-
     </section>
 
     <footer style="margin-top:18px; color:var(--muted); font-size:12px;">
       © Think Partner Nexus
     </footer>
-  </main>
+  </div>
 </body>
 </html>
